@@ -1,3 +1,5 @@
+library(reshape2)
+library(dplyr)
 #test dataset to produce a melted dataframe as arg in plot function 
 head(mtcars) #dataset
 cars_dist<-dist(mtcars, method = "euclidean") #distance measure  
@@ -14,18 +16,4 @@ cars_z<-tbl_df(cars_z) #reformat as local df
 cars_z_means<-cars_z %>% group_by(clust_assgn) %>% summarise_each(funs(mean(.,na.rm=TRUE))) #summarize standarized scores df
 cars_melt<-melt(cars_z_means, id.vars = "clust_assgn") #reshape standardized scores df 
 
-#plot themes 
-
-c_theme_default<-theme_gray() +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.25)
-        )
-
-#plot funtion 
-
-clustRprofile<-function(data_melt, theme){
-  profile_plot<-ggplot(data_melt, aes(x = variable, y = value, group = as.factor(clust_assgn), color = as.factor(clust_assgn))) +
-    geom_path(alpha = 0.9) + geom_point() + 
-    labs(x = "Variables", y = "Scaled Averages", title = "Cluster Profiles", color = "Clusters") + 
-    theme
-  print(profile_plot)
-}
+clustRprofile(data_melt = cars_melt)
