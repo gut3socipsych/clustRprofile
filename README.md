@@ -1,5 +1,4 @@
-# clustRprofile
-Code to visualize cluster analysis results.  
+# Cluster Analysis Profile Visualization Function (clustRprofile)
 
 ##Problem: 
 
@@ -11,4 +10,4 @@ Create a visual representation of the characteristics of clusters.
 
 ##Details: 
 
-....
+Still in development, dependant on ggplot2, reshape2, and dplyr packages.   
