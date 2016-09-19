@@ -10,4 +10,4 @@ Create a visual representation of the characteristics of clusters.
 
 ##Details: 
 
-Still in development, dependant on ggplot2, reshape2, and dplyr packages.   
+Still in development, dependant on ggplot2 and stats packages.   
