@@ -19,3 +19,4 @@ Still in development, dependant on ggplot2, reshape2, and dplyr packages.
 
 2. Numeric variables (columns) that are all 0 (zero) will return an error [Error in aggregate.data.frame ... no rows to aggregate].  
 
+
